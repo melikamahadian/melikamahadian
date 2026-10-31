@@ -82,11 +82,54 @@ The published sample above shows real output from the connected workflow. Screen
 
 Connected publishing, scheduling, status checks, and analytics access to an AI assistant through MCP, bringing recurring Instagram administration into a single tool-connected workflow.
 
+## Featured project: Hotspot Keeper
+
+Built a Persian-language web app with Sites to help keep an iPhone-to-iPhone hotspot connection active using a silent background audio stream. It also includes a Network Doctor to check connection quality and compare tests with Keeper on and off.
+
+### Problem
+
+An idle hotspot connection can be interrupted when the connected iPhone's screen locks. I wanted a lightweight browser-based tool to help maintain activity and make connection problems easier to inspect.
+
+### My role
+
+Built and refined the app with AI assistance in Sites, including the Persian interface, background keepalive stream, connection-state handling, network diagnostics, and home-screen installation support.
+
+### Tools & technologies
+
+- **Sites:** AI-assisted development and hosting.
+- **React + TypeScript:** interface and app logic, using the Next.js App Router structure with Vinext/Vite.
+- **HLS audio + Media Session API:** silent background playback and lock-screen media information.
+- **Service Worker + web app manifest:** home-screen installation and app-shell caching.
+- **Browser localStorage:** recent network-test history.
+- **Cloudflare Workers:** server routes for the stream and diagnostic requests.
+
+### Key features
+
+- Start, stop, and resume controls with status and elapsed time.
+- Silent audio stream with small segments roughly every 10 seconds.
+- On-demand download-speed and HTTP latency/jitter tests, plus a failed-request rate.
+- History of up to 12 tests and an on/off comparison using recent results.
+- Persian setup guidance and a mobile-friendly interface.
+
+### Live Demo
+
+[Open Hotspot Keeper ↗](https://hotspot-keeper.persiansaze-4674.chatgpt.site)
+
+### Screenshot
+
+![Hotspot Keeper — app interface](https://github.com/user-attachments/assets/6ee862a8-caa3-41f9-82fe-b415b474056b)
+
+### What I improved
+
+Kept live stream and test responses out of the offline cache, limited automatic reconnect attempts, and corrected media-fragment timing to avoid repeated restart and playback-stall problems. Network tests run only when requested.
+
+**Platform limit:** iOS can interrupt background playback during calls, other media playback, or when Safari closes; the app may need to be resumed manually.
+
 ## Portfolio direction
 
 **Real website → AI automation → Internal tools → Service integrations**
 
-Rochamel demonstrates a live business website and custom admin tool. The Instagram AI admin adds a practical automation and MCP integration project alongside it.
+Rochamel demonstrates a live business website and custom admin tool. The Instagram AI admin adds practical automation and MCP integration, while Hotspot Keeper demonstrates a mobile-focused utility with network diagnostics.
 
 ---
 
@@ -174,8 +217,53 @@ Rochamel demonstrates a live business website and custom admin tool. The Instagr
 
 دستیار را به ابزار انتشار و آمار اینستاگرام وصل کردم تا بتوانم کارهایی مثل زمان‌بندی، انتشار و بررسی پست‌ها را از همان گفت‌وگو با هوش مصنوعی انجام بدهم.
 
+## نمونه‌کار سوم: Hotspot Keeper — کمک به حفظ اتصال هات‌اسپات
+
+این ابزار را با کمک Sites ساختم تا وقتی یک آیفون از اینترنت آیفون دیگری استفاده می‌کند، به فعال ماندن اتصال هات‌اسپات کمک کند. برنامه یک صدای کاملاً بی‌صدا را در پس‌زمینه پخش می‌کند تا ارتباط شبکه بدون نیاز به روشن ماندن صفحه فعال بماند.
+
+یک بخش «دکتر شبکه» هم دارد تا کاربر بتواند کیفیت اتصال را بررسی کند و نتیجه تست‌ها را با برنامه روشن و خاموش مقایسه کند.
+
+### این پروژه چه مسئله‌ای را حل می‌کند؟
+
+گاهی بعد از قفل شدن صفحه یا بی‌استفاده ماندن گوشی، اتصال به هات‌اسپات قطع می‌شود. هدفم ساخت ابزاری ساده بود که به حفظ اتصال کمک کند و برای بررسی کندی یا نوسان اینترنت هم کاربرد داشته باشد.
+
+### من چه کار کردم؟
+
+با کمک هوش مصنوعی در Sites، برنامه را ساختم و بهتر کردم؛ از طراحی صفحه فارسی و دکمه‌های شروع و توقف تا پخش بی‌صدا، نمایش وضعیت اتصال، تست شبکه و امکان افزودن برنامه به صفحه اصلی گوشی.
+
+### با چه ابزارهایی ساختم؟
+
+- **Sites:** برای ساخت برنامه با کمک هوش مصنوعی و انتشار آن.
+- **React و TypeScript:** برای ساخت صفحه و منطق برنامه؛ با ساختار Next.js و اجرای Vinext/Vite.
+- **پخش صوت HLS:** برای دریافت بسته‌های کوچک و بی‌صدا در پس‌زمینه.
+- **Service Worker و تنظیمات وب‌اپ:** برای افزودن به صفحه اصلی و ذخیره فایل‌های اصلی برنامه.
+- **حافظه مرورگر:** برای نگهداری نتیجه تست‌های اخیر روی همان دستگاه.
+- **Cloudflare Workers:** برای پاسخ‌گویی به درخواست‌های پخش و تست شبکه.
+
+### قابلیت‌های اصلی
+
+- شروع، توقف و ادامه فعالیت، همراه با نمایش وضعیت و مدت اجرا.
+- دریافت بسته‌های کوچک صوتی تقریباً هر ۱۰ ثانیه، بدون پخش صدای قابل شنیدن.
+- تست سرعت دانلود، زمان پاسخ، نوسان آن و درصد درخواست‌های ناموفق.
+- ذخیره ۱۲ تست اخیر و مقایسه نتیجه‌ها با Keeper روشن و خاموش.
+- راهنمای فارسی تنظیمات آیفون و افزودن برنامه به صفحه اصلی.
+
+### لینک برنامه
+
+[باز کردن Hotspot Keeper](https://hotspot-keeper.persiansaze-4674.chatgpt.site)
+
+### تصویر پروژه
+
+![نمای برنامه Hotspot Keeper](https://github.com/user-attachments/assets/6ee862a8-caa3-41f9-82fe-b415b474056b)
+
+### چه چیزی را بهتر کردم؟
+
+کاری کردم بسته‌های پخش زنده و تست شبکه در حافظه آفلاین جمع نشوند. تلاش‌های پشت سر هم برای اتصال مجدد را محدود کردم و زمان‌بندی بسته‌های صوتی را اصلاح کردم تا پخش بعد از بسته اول متوقف نشود. تست شبکه هم فقط با زدن دکمه اجرا می‌شود.
+
+**محدودیت آیفون:** تماس تلفنی، پخش موسیقی یا ویدئو و بستن Safari ممکن است پخش پس‌زمینه را متوقف کند؛ در این حالت باید دوباره دکمه ادامه را زد.
+
 ## مسیر کاری من
 
-می‌خواهم با ترکیب طراحی سایت، هوش مصنوعی و اتصال ابزارها به هم، راه‌حل‌هایی بسازم که در یک کسب‌وکار واقعی استفاده شوند. روچامل و دستیار اینستاگرام دو نمونه از این مسیر هستند.
+می‌خواهم با ترکیب طراحی سایت، هوش مصنوعی و اتصال ابزارها به هم، راه‌حل‌هایی بسازم که در یک کسب‌وکار واقعی استفاده شوند. روچامل، دستیار اینستاگرام و Hotspot Keeper سه نمونه از این مسیر هستند.
 
 </div>
